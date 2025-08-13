@@ -56,19 +56,20 @@
       letter-spacing: 0.02em;
       text-align: center;
     }
+    .section-title {
+      margin-top: 2.5em;
+      font-size: 2.1em;
+      color: #195061;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-align: center;
+    }
     .features {
       background: linear-gradient(90deg, #f7fafc 0%, #e0fae0 100%);
       padding: 2em 0 2.5em 0;
       border-radius: 18px;
       margin: 2em 0;
       box-shadow: 0 6px 36px #0001;
-    }
-    .features h2 {
-      font-size: 2.1em;
-      color: #195061;
-      margin-bottom: 1.6em;
-      font-weight: 700;
-      letter-spacing: -1px;
     }
     .feature-list {
       display: flex;
@@ -189,101 +190,138 @@
       font-size: 1em;
       font-style: italic;
     }
+    .hero-pitch {
+      margin: 2em auto 2.6em auto;
+      padding: 1.5em 1em;
+      background: #fffbe6;
+      border-radius: 16px;
+      border: 1px solid #e0c080;
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #195061;
+      text-align: center;
+      box-shadow: 0 2px 20px #c57a0011;
+      max-width: 680px;
+    }
+    .next-features {
+      margin: 2em auto 0 auto;
+      background: #e5f7fa;
+      border: 1px solid #cde7ef;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #19506111;
+      padding: 1.3em 1em;
+      text-align: center;
+      font-size: 1.12em;
+      color: #195061;
+      font-weight: 500;
+      max-width: 550px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <!-- Franklin logo (Image 3) -->
     <img src="franklin-logo.png" alt="Franklin Logo" class="logo-main">
     <h1>Franklin AI Middleware</h1>
+    <div class="hero-pitch">
+      Your files, your AI, your rules. Franklin is a local-first, privacy-respecting engine that empowers you to harness the full power of AI—without giving up control.
+    </div>
     <h2>The Next Evolution of Local-First AI</h2>
   </header>
 
-  <section class="features">
-    <h2>What Makes Franklin Different?</h2>
-    <div class="feature-list">
-      <div class="feature-item">
-        <span class="feature-icon"><i class="fas fa-folder-open"></i></span>
-        <h3>File & Folder Access</h3>
-        <p>Directly interact with your local files and folders.</p>
+  <section>
+    <h2 class="section-title">Key Features</h2>
+    <div class="features">
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="feature-icon"><i class="fas fa-brain"></i></span>
+          <h3>Natural Language Prompt Processing 🧠</h3>
+          <p>Interact with Franklin using plain language—no technical setup required.</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"><i class="fas fa-retweet"></i></span>
+          <h3>Hybrid Model Routing 🔁</h3>
+          <p>
+            Efficiently combines GPT-4o as the "brain" for advanced reasoning with TinyLlama as the local "worker" for file access and privacy. Tasks are automatically routed to ChatGPT for quality and use local AI when privacy or offline access is needed.
+          </p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"><i class="fas fa-folder-open"></i></span>
+          <h3>RAG Toolchain 📂</h3>
+          <p>Easily list, read, and summarize files on your local system—no uploads needed.</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"><i class="fas fa-globe"></i></span>
+          <h3>Functional Web UI 🌐</h3>
+          <p>Modern React interface for prompts, workflow management, and viewing results.</p>
+        </div>
       </div>
-      <div class="feature-item">
-        <span class="feature-icon"><i class="fas fa-brain"></i></span>
-        <h3>Memory & Summarization</h3>
-        <p>System-aware memory and smart summarization.</p>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon"><i class="fas fa-file-alt"></i></span>
-        <h3>Log & Document Understanding</h3>
-        <p>Understand your logs and documents locally.</p>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon"><i class="fas fa-bell"></i></span>
-        <h3>Notifications & Updates</h3>
-        <p>Stay informed with smart notifications.</p>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon"><i class="fas fa-cloud"></i></span>
-        <h3>Cloud & Local Hybrid</h3>
-        <p>Fallback to TinyLlama if OpenAI is unavailable.</p>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon"><i class="fas fa-rocket"></i></span>
-        <h3>FastAPI + Web UI</h3>
-        <p>Lightweight backend and modern web interface.</p>
-      </div>
+    </div>
+    <div class="next-features">
+      <strong>Franklin 1.0 is just the beginning.</strong><br>
+      The core foundation is here, but many more features and integrations are on the way!
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">The Franklin Story</h2>
+    <div class="story">
+      <h3>🚀 Why I Built Franklin</h3>
+      <p>
+        It started when I realized that unless I constantly upload files, AI can’t work with anything on my machine.<br><br>
+        Most tools today are designed for one-off chats, not real work. You paste in a prompt, get a response, and it’s gone. No memory, no local tools, no privacy — and no control. I didn’t want to be forced to rely on cloud services, or share my data just to use modern AI.<br><br>
+        So I built Franklin — my first real solo project, developed in my spare time, late nights and weekends. It’s still a work in progress — but it’s already different from most AI tools I’ve tried.<br><br>
+        Franklin lives on your machine — where your files are. It can read them, summarize them, and act on them. It speaks plain language and respects your privacy.<br><br>
+        By default, Franklin runs in hybrid mode, combining fast, high-quality cloud models with local tools and fallback logic. When privacy matters most, you can switch to local-only mode — keeping everything on your device.<br><br>
+        No uploading. No surveillance. Just real work — done on your terms.<br><br>
+        What started as a personal experiment became something more: a local-first AI operating system for power users, creators, devs, and tinkerers — like me.<br><br>
+        Franklin isn’t for everyone. But if you’re the kind of person who builds your own tools, runs your own server, or just wants to own your AI — Franklin was built for you.<br><br>
+        <strong>Welcome aboard.</strong>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Meet the Creator</h2>
+    <div class="about-creator">
+      <h3>👤 About the Creator</h3>
+      <img src="dfrankstudioz-logo.png" alt="DFRANK Studioz Logo" class="logo-studio">
+      <p>
+        Hi, I’m Brent — the solo builder behind Franklin.<br><br>
+        I don’t work in IT. I don’t have formal qualifications. I’m not a developer by trade. I’m just a tinkerer — someone who loves learning, breaking things, fixing them, and figuring out how things work.<br><br>
+        Franklin is my first real project. I started it as a side hobby, and it slowly grew into something bigger. I built it from the ground up — writing code, wiring up containers, debugging crashes, and learning new frameworks along the way.<br><br>
+        It’s still evolving. I’m constantly improving it, fixing things, and adding new features. There’s a lot more to come — but the core idea is already here: local-first AI that works for you.<br><br>
+        If you're a builder, a self-hoster, or someone who just likes to have control over your tools — welcome. Franklin was made for you.
+        <em>— Brent (aka dfrank)</em>
+      </p>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <div class="cta">
-    <p><strong>Questions or commercial use?</strong><br>
-    Contact: <a href="mailto:dfstudioz@gmail.com">dfstudioz@gmail.com</a></p>
-    <p><strong>License:</strong> Franklin is available under the <a href="https://polyformproject.org/licenses/prosperity/3.0.0/" target="_blank">Prosperity Public License 3.0</a>.<br>
-    Free for non-commercial use. Contact us to license commercially.</p>
-    <div class="social-links">
-      <span>Connect with us:</span>
-      <a href="https://mastodon.social/@dfrankstudioz" target="_blank">Mastodon (@dfrankstudioz)</a>
-      <a href="https://www.reddit.com/user/dfstudioz" target="_blank">Reddit (u/dfstudioz)</a>
-      <a href="https://twitter.com/dfrankstudioz" target="_blank">Twitter/X (@dfrankstudioz)</a>
+  <section>
+    <h2 class="section-title">Support Franklin</h2>
+    <div class="donate">
+      <p><strong>Support Franklin!</strong> If you find this project helpful, consider donating to keep development going:</p>
+      <a href="https://buymeacoffee.com/dfstudioz" target="_blank">Buy Me a Coffee</a>
+      <a href="https://ko-fi.com/dfrankstudioz" target="_blank">Ko-fi</a>
     </div>
-  </div>
+  </section>
 
-  <div class="donate">
-    <p><strong>Support Franklin!</strong> If you find this project helpful, consider donating to keep development going:</p>
-    <a href="https://buymeacoffee.com/dfstudioz" target="_blank">Buy Me a Coffee</a>
-    <a href="https://ko-fi.com/dfrankstudioz" target="_blank">Ko-fi</a>
-  </div>
-
-  <div class="story">
-    <h3>🚀 My Story: Why I Built Franklin</h3>
-    <p>
-      It started when I realized that unless I constantly upload files, AI can’t work with anything on my machine.<br><br>
-      Most tools today are designed for one-off chats, not real work. You paste in a prompt, get a response, and it’s gone. No memory, no local tools, no privacy — and no control. I didn’t want that. <br><br>
-      So I built Franklin — my first real solo project, developed in my spare time, late nights and weekends. It’s still a work in progress — but it’s already different from most AI tools I’ve tried.<br><br>
-      Franklin lives on your machine — where your files are. It can read them, summarize them, and act on them. It speaks plain language and respects your privacy.<br><br>
-      By default, Franklin runs in hybrid mode, combining fast, high-quality cloud models with local tools and fallback logic. When privacy matters most, you can switch to local-only mode — keeping everything on your device.<br><br>
-      No uploading. No surveillance. Just real work — done on your terms.<br><br>
-      What started as a personal experiment became something more: a local-first AI operating system for power users, creators, devs, and tinkerers — like me.<br><br>
-      Franklin isn’t for everyone. But if you’re the kind of person who builds your own tools, runs your own server, or just wants to own your AI — Franklin was built for you.<br><br>
-      <strong>Welcome aboard.</strong>
-    </p>
-  </div>
-
-  <div class="about-creator">
-    <h3>👤 About the Creator</h3>
-    <!-- DFrank Studioz logo (Image 2) -->
-    <img src="dfrankstudioz-logo.png" alt="DFRANK Studioz Logo" class="logo-studio">
-    <p>
-      Hi, I’m Brent — the solo builder behind Franklin.<br><br>
-      I don’t work in IT. I don’t have formal qualifications. I’m not a developer by trade. I’m just a tinkerer — someone who loves learning, breaking things, fixing them, and figuring out how things work.<br><br>
-      Franklin is my first real project. I started it as a side hobby, and it slowly grew into something bigger. I built it from the ground up — writing code, wiring up containers, debugging crashes, and designing the user interface.<br><br>
-      It’s still evolving. I’m constantly improving it, fixing things, and adding new features. There’s a lot more to come — but the core idea is already here: local-first AI that works for you.<br><br>
-      If you're a builder, a self-hoster, or someone who just likes to have control over your tools — welcome. Franklin was made for you.
-      <em>— Brent (aka dfrank)</em>
-    </p>
-  </div>
+  <section>
+    <h2 class="section-title">Get Started & Connect</h2>
+    <div class="cta">
+      <p><strong>Questions or commercial use?</strong><br>
+      Contact: <a href="mailto:dfstudioz@gmail.com">dfstudioz@gmail.com</a></p>
+      <p><strong>License:</strong> Franklin is available under the <a href="https://polyformproject.org/licenses/prosperity/3.0.0/" target="_blank">Prosperity Public License 3.0</a>.<br>
+      Free for non-commercial use. Contact us to license commercially.</p>
+      <div class="social-links">
+        <span>Connect with us:</span>
+        <a href="https://mastodon.social/@dfrankstudioz" target="_blank">Mastodon (@dfrankstudioz)</a>
+        <a href="https://www.reddit.com/user/dfstudioz" target="_blank">Reddit (u/dfstudioz)</a>
+        <a href="https://twitter.com/dfrankstudioz" target="_blank">Twitter/X (@dfrankstudioz)</a>
+      </div>
+    </div>
+  </section>
 
   <p style="text-align:center;"><em>This is a personal proof-of-concept project. No support or warranty provided.</em></p>
 </body>
