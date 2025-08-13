@@ -1,66 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <title>Franklin AI Middleware</title>
+  <meta name="description" content="Franklin is a hybrid AI engine that blends local tools with cloud intelligence. Local-first, privacy-respecting AI for creators, devs, and tinkerers.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Franklin AI Middleware">
+  <meta property="og:description" content="Local-first, privacy-respecting AI for creators, devs, and tinkerers.">
+  <meta property="og:image" content="./Franklin AI Middleware_files/franklin-logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { max-width: 800px; margin: auto; font-family: sans-serif; background: #f4f4f4; padding: 2em; }
-    h1, h2 { text-align: center; }
-    ul { line-height: 1.6; }
-    .logo {
+    body {
+      max-width: 900px;
+      margin: auto;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: #f6f8fb;
+      padding: 0;
+      color: #21262c;
+    }
+    header {
+      background: linear-gradient(90deg, #e5f7fa 0%, #fff6e0 100%);
+      padding: 2em 0 1em 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .logo-main {
       display: block;
       margin: 0 auto 1em auto;
-      max-width: 200px;
+      max-width: 130px;
+      border-radius: 16px;
+      box-shadow: 0 2px 18px #0001;
+    }
+    .logo-studio {
+      display: block;
+      margin: 1.5em auto 0 auto;
+      max-width: 100px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0001;
+    }
+    h1 {
+      font-size: 2.8em;
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin: 0.2em 0 0 0;
+      background: linear-gradient(90deg, #2a6f7a 30%, #c57a00 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-size: 1.4em;
+      font-weight: 600;
+      margin: 0.5em 0 0 0;
+      color: #195061;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+    .features {
+      background: linear-gradient(90deg, #f7fafc 0%, #e0fae0 100%);
+      padding: 2em 0 2.5em 0;
+      border-radius: 18px;
+      margin: 2em 0;
+      box-shadow: 0 6px 36px #0001;
+    }
+    .features h2 {
+      font-size: 2.1em;
+      color: #195061;
+      margin-bottom: 1.6em;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 850px;
+    }
+    .feature-item {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #2a6f7a13;
+      padding: 1.7em 1.1em;
+      text-align: center;
+      flex: 1 1 220px;
+      max-width: 240px;
+      min-width: 200px;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: 1px solid #e5f7fa;
+      position: relative;
+    }
+    .feature-item:hover {
+      transform: translateY(-7px) scale(1.04);
+      box-shadow: 0 12px 32px #2a6f7a22;
+      border-color: #cde7ef;
+    }
+    .feature-icon {
+      font-size: 2.6em;
+      color: #2a6f7a;
+      margin-bottom: 0.6em;
+      display: block;
+      filter: drop-shadow(0 2px 6px #cde7ef77);
+      transition: color 0.2s;
+    }
+    .feature-item:hover .feature-icon {
+      color: #c57a00;
+    }
+    .feature-item h3 {
+      margin: 0.5em 0 0.5em 0;
+      font-size: 1.19em;
+      font-weight: 700;
+      color: #195061;
+      letter-spacing: 0.01em;
+    }
+    .feature-item p {
+      font-size: 1em;
+      color: #444;
+      margin: 0.7em 0 0 0;
+      font-weight: 400;
+    }
+    @media (max-width: 800px) {
+      .feature-list { flex-direction: column; gap: 18px; }
+      .feature-item { max-width: 100%; min-width: 0; }
+    }
+    .divider {
+      width: 40%;
+      margin: 2em auto;
+      border-bottom: 1.5px solid #e0c080;
+      opacity: 0.3;
+    }
+    .cta, .donate, .story, .about-creator {
+      margin-top: 2em;
+      padding: 1.6em 1em;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #0001;
+      background: #fff;
     }
     .cta {
-      text-align: center;
-      margin-top: 2em;
-      padding: 1em;
       background: #e0e0e0;
-      border-radius: 6px;
-    }
-    .social-links {
-      margin-top: 1em;
+      border: 1px solid #e0e0e0;
       text-align: center;
     }
+    .social-links { margin-top: 1em; }
     .social-links a {
       margin: 0 10px;
       text-decoration: none;
-      color: #222;
+      color: #2a6f7a;
       font-weight: bold;
+      transition: color 0.18s;
     }
-    .social-links a:hover {
-      text-decoration: underline;
-    }
+    .social-links a:hover { color: #c57a00; text-decoration: underline; }
     .donate {
-      margin-top: 2em;
-      text-align: center;
       background: #fbeee0;
-      border-radius: 6px;
-      padding: 1em;
       border: 1px solid #e0c080;
+      text-align: center;
     }
     .donate a {
       margin: 0 10px;
       color: #c57a00;
       font-weight: bold;
       text-decoration: none;
+      transition: color 0.18s;
     }
-    .donate a:hover {
-      text-decoration: underline;
+    .donate a:hover { color: #195061; text-decoration: underline; }
+    .story {
+      background: #fff6e0;
+      border: 1px solid #f2d194;
+      font-size: 1.08em;
     }
+    .story h3 { text-align: center; margin-top: 0; margin-bottom: 1em; }
     .about-creator {
-      margin-top: 2em;
-      padding: 1.5em;
       background: #e5f7fa;
-      border-radius: 6px;
       border: 1px solid #b6e0ea;
       font-size: 1.05em;
     }
-    .about-creator h3 {
-      text-align: center;
-      margin-top: 0;
-    }
+    .about-creator h3 { text-align: center; margin-top: 0; }
     .about-creator em {
       display: block;
       margin-top: 1em;
@@ -68,41 +183,64 @@
       font-style: italic;
       color: #2a6f7a;
     }
-    .story {
-      margin-top: 2em;
-      padding: 1.5em;
-      background: #fff6e0;
-      border-radius: 6px;
-      border: 1px solid #f2d194;
-      font-size: 1.08em;
-    }
-    .story h3 {
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: 1em;
+    p[style*="text-align:center"] {
+      margin-top: 2.5em;
+      color: #888;
+      font-size: 1em;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-  <img src="./Franklin AI Middleware_files/franklin-logo.png" alt="Franklin Logo" class="logo">
-  <h1>Franklin AI Middleware</h1>
-  <h2>The Next Evolution of AI</h2>
+  <header>
+    <!-- Franklin logo (Image 3) -->
+    <img src="franklin-logo.png" alt="Franklin Logo" class="logo-main">
+    <h1>Franklin AI Middleware</h1>
+    <h2>The Next Evolution of Local-First AI</h2>
+  </header>
 
-  <p>Franklin is a hybrid AI engine that blends local tools with cloud intelligence, giving you:</p>
+  <section class="features">
+    <h2>What Makes Franklin Different?</h2>
+    <div class="feature-list">
+      <div class="feature-item">
+        <span class="feature-icon"><i class="fas fa-folder-open"></i></span>
+        <h3>File & Folder Access</h3>
+        <p>Directly interact with your local files and folders.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon"><i class="fas fa-brain"></i></span>
+        <h3>Memory & Summarization</h3>
+        <p>System-aware memory and smart summarization.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon"><i class="fas fa-file-alt"></i></span>
+        <h3>Log & Document Understanding</h3>
+        <p>Understand your logs and documents locally.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon"><i class="fas fa-bell"></i></span>
+        <h3>Notifications & Updates</h3>
+        <p>Stay informed with smart notifications.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon"><i class="fas fa-cloud"></i></span>
+        <h3>Cloud & Local Hybrid</h3>
+        <p>Fallback to TinyLlama if OpenAI is unavailable.</p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon"><i class="fas fa-rocket"></i></span>
+        <h3>FastAPI + Web UI</h3>
+        <p>Lightweight backend and modern web interface.</p>
+      </div>
+    </div>
+  </section>
 
-  <ul>
-    <li>Access to files and folders</li>
-    <li>System-aware memory and summarization</li>
-    <li>Log and document understanding</li>
-    <li>Notifications and proactive updates</li>
-    <li>Fallback to local TinyLlama if OpenAI is unavailable</li>
-    <li>FastAPI backend with Web UI</li>
-  </ul>
+  <div class="divider"></div>
 
   <div class="cta">
     <p><strong>Questions or commercial use?</strong><br>
     Contact: <a href="mailto:dfstudioz@gmail.com">dfstudioz@gmail.com</a></p>
-    <p><strong>License:</strong> Franklin is available under the <a href="https://polyformproject.org/licenses/prosperity/3.0.0/">Prosperity Public License 3.0</a>.<br>
+    <p><strong>License:</strong> Franklin is available under the <a href="https://polyformproject.org/licenses/prosperity/3.0.0/" target="_blank">Prosperity Public License 3.0</a>.<br>
     Free for non-commercial use. Contact us to license commercially.</p>
     <div class="social-links">
       <span>Connect with us:</span>
@@ -113,7 +251,7 @@
   </div>
 
   <div class="donate">
-    <p><strong>Support Franklin!</strong> If you found this project helpful, consider donating to keep development going:</p>
+    <p><strong>Support Franklin!</strong> If you find this project helpful, consider donating to keep development going:</p>
     <a href="https://buymeacoffee.com/dfstudioz" target="_blank">Buy Me a Coffee</a>
     <a href="https://ko-fi.com/dfrankstudioz" target="_blank">Ko-fi</a>
   </div>
@@ -122,10 +260,10 @@
     <h3>🚀 My Story: Why I Built Franklin</h3>
     <p>
       It started when I realized that unless I constantly upload files, AI can’t work with anything on my machine.<br><br>
-      Most tools today are designed for one-off chats, not real work. You paste in a prompt, get a response, and it’s gone. No memory, no local tools, no privacy — and no control. I didn’t want a chatbot. I wanted a partner. Something that could help me build, debug, automate, and organize — the way I work, on my terms, and on my machine.<br><br>
+      Most tools today are designed for one-off chats, not real work. You paste in a prompt, get a response, and it’s gone. No memory, no local tools, no privacy — and no control. I didn’t want that. <br><br>
       So I built Franklin — my first real solo project, developed in my spare time, late nights and weekends. It’s still a work in progress — but it’s already different from most AI tools I’ve tried.<br><br>
       Franklin lives on your machine — where your files are. It can read them, summarize them, and act on them. It speaks plain language and respects your privacy.<br><br>
-      By default, Franklin runs in hybrid mode, combining fast, high-quality cloud models with local tools and fallback logic. When privacy matters most, you can switch to local-only mode — keeping everything on your device. You stay in control.<br><br>
+      By default, Franklin runs in hybrid mode, combining fast, high-quality cloud models with local tools and fallback logic. When privacy matters most, you can switch to local-only mode — keeping everything on your device.<br><br>
       No uploading. No surveillance. Just real work — done on your terms.<br><br>
       What started as a personal experiment became something more: a local-first AI operating system for power users, creators, devs, and tinkerers — like me.<br><br>
       Franklin isn’t for everyone. But if you’re the kind of person who builds your own tools, runs your own server, or just wants to own your AI — Franklin was built for you.<br><br>
@@ -135,14 +273,13 @@
 
   <div class="about-creator">
     <h3>👤 About the Creator</h3>
+    <!-- DFrank Studioz logo (Image 2) -->
+    <img src="dfrankstudioz-logo.png" alt="DFRANK Studioz Logo" class="logo-studio">
     <p>
       Hi, I’m Brent — the solo builder behind Franklin.<br><br>
-      I don’t work in IT. I don’t have formal qualifications. I’m not a developer by trade. I’m just a tinkerer — someone who loves learning, breaking things, fixing them, and figuring out how it all works.
-      <br><br>
-      Franklin is my first real project. I started it as a side hobby, and it slowly grew into something bigger. I built it from the ground up — writing code, wiring up containers, debugging crashes, and testing everything myself. Nights, weekends, whenever I had a moment to spare.
-      <br><br>
-      It’s still evolving. I’m constantly improving it, fixing things, and adding new features. There’s a lot more to come — but the core idea is already here: local-first AI that works for you, not some server farm.
-      <br><br>
+      I don’t work in IT. I don’t have formal qualifications. I’m not a developer by trade. I’m just a tinkerer — someone who loves learning, breaking things, fixing them, and figuring out how things work.<br><br>
+      Franklin is my first real project. I started it as a side hobby, and it slowly grew into something bigger. I built it from the ground up — writing code, wiring up containers, debugging crashes, and designing the user interface.<br><br>
+      It’s still evolving. I’m constantly improving it, fixing things, and adding new features. There’s a lot more to come — but the core idea is already here: local-first AI that works for you.<br><br>
       If you're a builder, a self-hoster, or someone who just likes to have control over your tools — welcome. Franklin was made for you.
       <em>— Brent (aka dfrank)</em>
     </p>
